@@ -11,7 +11,7 @@ const Banner = () => {
         >
           <div className="flex items-center justify-center w-full h-full bg-gray-900/40 rounded-xl">
             <div className=" ">
-              <h1 className="text-3xl font-semibold text-white lg:text-4xl text-center">
+              <h1 className="text-3xl font-semibold text-white lg:text-4xl text-center font-heading">
                 Discover Your Life,
                 <span className="text-blue-400">Travel </span> Where You Want
               </h1>

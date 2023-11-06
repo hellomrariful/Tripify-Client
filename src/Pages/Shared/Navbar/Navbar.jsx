@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/3.png";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import tripify from "../../assets/logo.png";
+import tripify from "../../assets/3.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
