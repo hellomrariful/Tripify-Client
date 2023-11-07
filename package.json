@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
+    "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.18.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.9.0"

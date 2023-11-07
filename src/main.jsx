@@ -11,7 +11,9 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Provider/AuthProvider';
-import Service from './Pages/Service/Service';
+import Service from './Pages/AddService/AddService';
+import AddService from './Pages/AddService/AddService';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/service",
         element: <Service></Service>
+      },
+      {
+        path: "/dashboard/AddService",
+        element: <PrivateRoute><AddService></AddService></PrivateRoute>
       },
 
     ]
