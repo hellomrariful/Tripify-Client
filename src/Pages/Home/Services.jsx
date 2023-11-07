@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ServiceDetails from "./ServiceDetails";
 
+
 const Services = () => {
   const [services, setServices] = useState([]);
 
@@ -23,6 +24,7 @@ const Services = () => {
       <div className="rounded-xl">
       {services.map((service) => (
         <ServiceDetails key={service._id} service={service}></ServiceDetails>
+       
       ))}
       </div>
     </div>

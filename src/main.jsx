@@ -14,6 +14,7 @@ import AuthProvider from './Provider/AuthProvider';
 import AddService from './Pages/AddService/AddService';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Services from './Pages/Home/Services';
+import SingleServiceDetails from './SingleServiceDetails/SingleServiceDetails';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,15 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/AddServices",
         element: <PrivateRoute><AddService></AddService></PrivateRoute>
+      },
+      {
+        path: "/serviceDetails/:id",
+        element: <PrivateRoute>
+          <SingleServiceDetails></SingleServiceDetails>
+        </PrivateRoute>,
+        loader: ({params}) =>
+        fetch(`http://localhost:5173/dashboard/AddServices/${params.id}`)
+
       }
     ]
   },
