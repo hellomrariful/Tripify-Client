@@ -11,9 +11,9 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Provider/AuthProvider';
-import Service from './Pages/AddService/AddService';
 import AddService from './Pages/AddService/AddService';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Services from './Pages/Home/Services';
 
 const router = createBrowserRouter([
   {
@@ -34,17 +34,19 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: "/service",
-        element: <Service></Service>
+        path: "/services",
+        element: <Services></Services>,
+        loader: () =>
+          fetch("http://localhost:5000/dashboard/AddService"),
       },
       {
-        path: "/dashboard/AddService",
+        path: "/dashboard/AddServices",
         element: <PrivateRoute><AddService></AddService></PrivateRoute>
-      },
-
+      }
     ]
   },
 ]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

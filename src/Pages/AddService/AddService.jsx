@@ -28,7 +28,7 @@ const AddService = () => {
     fetch("http://localhost:5000/dashboard/AddService", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "content-type":"application/json"
         },
         body: JSON.stringify(Service)
       })

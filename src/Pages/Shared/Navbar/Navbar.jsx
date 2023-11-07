@@ -34,7 +34,7 @@ const Navbar = () => {
     <>
       <nav className="flex gap-3 md:gap-4 lg:gap-10 lg:text-xl text-[18px]">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/service">Service</NavLink>
+        <NavLink to="/services">Services</NavLink>
         {user ? null : 
         <NavLink to="/register">Register</NavLink>
         }
@@ -46,7 +46,7 @@ const Navbar = () => {
               <NavLink to="/dashboard/my-services">My Services</NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/AddService">Add Services</NavLink>
+              <NavLink to="/dashboard/AddServices">Add Services</NavLink>
             </li>
             <li>
               <NavLink to="/dashboard/my-schedules">My Schedules</NavLink>
