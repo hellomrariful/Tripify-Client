@@ -25,9 +25,9 @@ const ServiceDetails = ({ service }) => {
 
   return (
     <div>
-      <div className="max-w-3xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10">
+      <div className="max-w-5xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10">
         <img
-          className="object-cover w-full h-72"
+          className="object-cover w-full h-96"
           src={ServicePhoto}
           alt="Article"
         />
@@ -51,20 +51,7 @@ const ServiceDetails = ({ service }) => {
 
           <div className="mt-4">
             {loading ? (
-              <div className="flex justify-center items-center h-screen">
-                <Oval
-                  height={50}
-                  width={50}
-                  color=" #FF444A"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                  ariaLabel="oval-loading"
-                  secondaryColor="#FF444A"
-                  strokeWidth={4}
-                  strokeWidthSecondary={2}
-                />
-              </div>
+             null
             ) : (
               <div className="flex items-center">
                 <div className="flex items-center">

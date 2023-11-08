@@ -46,7 +46,7 @@ const Services = ({ isHome }) => {
       {isHome ? (
         <button
           className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
-          onClick={() => navigate('/services')}
+          onClick={() => navigate('/service')}
         >
           See More
         </button>
