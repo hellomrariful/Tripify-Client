@@ -4,11 +4,10 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Gellery = () => {
   const imageUrls = [
-    "https://i.ibb.co/cksbmJH/image.png",
-    "https://i.ibb.co/VTswGmg/img-06.jpg",
-    "https://i.ibb.co/MC3ryyB/image.png",
-    "https://i.ibb.co/MC3ryyB/image.png",
-    "https://i.ibb.co/0GbYbx2/image.png",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-03-package-01.jpeg",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-04-package-02.jpeg",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-05-package-03.jpeg",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-18-1024x683.jpeg",
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -37,14 +36,14 @@ const Gellery = () => {
   }, [activeIndex]);
 
   const mainImageUrl =
-    "https://i.ibb.co/ykjgPRd/pexels-william-choquette-1954524.jpg";
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-12-1024x683.jpeg";
 
   const imageUrlPic = [
-    "https://i.ibb.co/MC3ryyB/image.png",
-    "https://i.ibb.co/ykjgPRd/pexels-william-choquette-1954524.jpg",
-    "https://i.ibb.co/Yfbk6g2/img-05.png",
-    "https://i.ibb.co/XLnVjW0/img-02.png",
-    "https://i.ibb.co/jZfCm7F/img-04.png",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-15.jpeg",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-09-destination-03-1024x683.jpeg",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-13.jpeg",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-14.jpeg",
+    "https://travel.nicdark.com/snow-adventures-wordpress-theme/wp-content/uploads/sites/13/2023/05/i-parallax-20.jpeg",
   ];
 
   const [activeImage, setActiveImage] = useState(mainImageUrl);
@@ -104,7 +103,7 @@ const Gellery = () => {
         </div>
 
         <div className="mt-20">
-          <h1 className="text-center text-4xl font-bold mb-16">
+          <h1 className="text-center text-4xl font-bold mb-16 font-heading">
            Our Happy Customer
           </h1>
         </div>
