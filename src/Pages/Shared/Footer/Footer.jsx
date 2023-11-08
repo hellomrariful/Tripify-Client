@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className="bg-backgroundColor">
           <div className="container py-10 mx-auto">
             <div className="flex flex-col items-center text-center">
-              <Link to={'/'} className="flex items-center">
+              <Link to={"/"} className="flex items-center">
                 <img src={logo} className="h-12 mr-3" alt="" />
               </Link>
 
@@ -20,16 +20,24 @@ const Footer = () => {
                 >
                   Home
                 </a>
-                <Link to={'/gallery'}  className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]">Gallery</Link>
-                
+                <Link
+                  to={"/gallery"}
+                  className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]"
+                >
+                  Gallery
+                </Link>
+
                 <a
                   href="#"
                   className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]"
                 >
                   Terms & Condition
                 </a>
-                <Link to={'services'} className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]">
-                Services
+                <Link
+                  to={"services"}
+                  className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]"
+                >
+                  Services
                 </Link>
               </div>
             </div>
@@ -39,7 +47,10 @@ const Footer = () => {
 
               <div className="flex flex-col items-center sm:flex-row sm:justify-between">
                 <p className=" text-[#858585] dark:text-gray-300 ">
-                 <Link to={'/'}> © Tripify 2023.</Link> All Rights Reserved.
+                  <Link to={"/"}> © Tripify 2023.</Link> All Rights Reserved.
+                  <span className="ml-32">
+                    67/2, Agrani, Sylhet, Bangladesh.
+                  </span>
                 </p>
 
                 <div className="flex  -mx-2 md:mt-0 mt-3">
