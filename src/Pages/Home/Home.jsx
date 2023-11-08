@@ -35,7 +35,10 @@ const Home = () => {
     <div>
       <Banner> </Banner>
       <HomeServiceCard></HomeServiceCard>
-      <Services></Services>
+      <Services isHome={true} ></Services>
+
+
+
       <div>
         <h1 className="text-center mt-20 font-bold text-4xl font-heading">
           Why Chose Tripify?
@@ -86,7 +89,7 @@ const Home = () => {
                 fill="#0C0C0C"
               />
             </svg>
-            <h1 className=" text-descriptionColor text-xl">Latest Tech</h1>
+            <h1 className=" text-descriptionColor text-xl">Latest Guide</h1>
           </div>
           <div className="md:flex grid place-items-center items-center gap-1">
             <svg
@@ -117,7 +120,7 @@ const Home = () => {
                 fill="#0C0C0C"
               />
             </svg>
-            <h1 className=" text-descriptionColor text-xl">100% Guarantee</h1>
+            <h1 className=" text-descriptionColor text-xl">100% Safe</h1>
           </div>
           <div className="md:flex grid place-items-center items-center gap-1">
             <svg
@@ -168,9 +171,7 @@ const Home = () => {
                 fill="#0C0C0C"
               />
             </svg>
-            <h1 className=" text-descriptionColor text-xl">
-              Free Shipping 99$
-            </h1>
+            <h1 className=" text-descriptionColor text-xl">Enjoy Free Car</h1>
           </div>
           <div className="md:flex grid place-items-center items-center gap-1">
             <svg
@@ -213,15 +214,36 @@ const Home = () => {
                 fill="#0C0C0C"
               />
             </svg>
-            <h1 className=" text-descriptionColor text-xl">24/7 Support</h1>
+            <h1 className=" text-descriptionColor text-xl">
+              24/7 Service Support
+            </h1>
           </div>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="1000"
-          data-aos-offset="100"
-        >
+        <div>
+          {/* 50% off */}
+          <div>
+            <div className="p-6 py-12 dark:bg-violet-400 dark:text-gray-900 bg-blue-500 rounded-xl mt-20">
+              <div className="container mx-auto">
+                <div className="flex flex-col lg:flex-row items-center justify-between">
+                  <h2 className="text-center text-6xl tracki font-bold text-white">
+                    Up to 50% Off
+                  </h2>
+                  <div className="space-x-2 text-center py-2 lg:py-0 ">
+                    <span>Don’t Miss The 50% Discount if You register Today. use</span>
+                    <span className="font-bold text-lg text-red-300">Friday</span>
+                  </div>
+                  <a
+                    href="#"
+                    rel="noreferrer noopener"
+                    className="px-2 text-center   py-2 rounded-md border block dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400 text-white ml-20"
+                  >
+                    Shop Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <h1 className="text-center mt-20 font-bold text-4xl font-heading mb-5">
             Have Question?
           </h1>
@@ -233,22 +255,17 @@ const Home = () => {
 
       <div>
         <div
-          data-aos="fade-up"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="1000"
-          data-aos-offset="100"
+        // data-aos="fade-up"
+        // data-aos-easing="ease-out-cubic"
+        // data-aos-duration="1000"
+        // data-aos-offset="100"
         >
           <p className="text-center text-[#524FF5] text-2xl font-semibold uppercase tracking-[8px] mb-1 mt-20">
             We Trained You to Gain
           </p>
           <h1 className="text-center text-5xl font-bold mb-16">Our Trainers</h1>
 
-          <div
-            data-aos="fade-up"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="1000"
-            data-aos-offset="100"
-          >
+          <div>
             <div className="grid md:grid-cols-3 space-x-4 ">
               <div className="bg-[#1B2129]">
                 <div className="bg-[#D3D3D3] -mt-3">
@@ -350,6 +367,72 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* discount */}
+
+
+      <div className="w-full mt-20 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
+          Your Are Also Available in your Mobile
+        </h5>
+        <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
+          Download our app form Google Play & Mac App store, and enjoy with us.
+        </p>
+        <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+          <a
+            href="#"
+            className="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+          >
+            <svg
+              className="mr-3 w-7 h-7"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fab"
+              data-icon="apple"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                fill="currentColor"
+                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+              ></path>
+            </svg>
+            <div className="text-left">
+              <div className="mb-1 text-xs">Download on the</div>
+              <div className="-mt-1 font-sans text-sm font-semibold">
+                Mac App Store
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            className="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+          >
+            <svg
+              className="mr-3 w-7 h-7"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fab"
+              data-icon="google-play"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"
+              ></path>
+            </svg>
+            <div className="text-left">
+              <div className="mb-1 text-xs">Get in on</div>
+              <div className="-mt-1 font-sans text-sm font-semibold">
+                Google Play
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
