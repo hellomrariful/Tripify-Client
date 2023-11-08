@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import Faq from "./Faq";
 import Services from "./Services";
@@ -33,6 +34,9 @@ const Home = () => {
       <Banner> </Banner>
       <Services isHome={true}></Services>
       <div>
+        <Helmet>
+          <title>Tripify | Home</title>
+        </Helmet>
         <h1 className="text-center mt-20 font-bold text-4xl font-heading">
           Why Chose Tripify?
         </h1>

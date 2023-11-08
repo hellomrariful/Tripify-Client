@@ -39,7 +39,7 @@ const Footer = () => {
 
               <div className="flex flex-col items-center sm:flex-row sm:justify-between">
                 <p className=" text-[#858585] dark:text-gray-300 ">
-                 <Link to={'/'}> <span className="font-heading">© Tripify 2023</span></Link>. All Rights Reserved.
+                 <Link to={'/'}> © Tripify 2023.</Link> All Rights Reserved.
                 </p>
 
                 <div className="flex  -mx-2 md:mt-0 mt-3">

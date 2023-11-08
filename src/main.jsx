@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Services from "./Pages/Home/Services";
 import SingleServiceDetails from "./SingleServiceDetails/SingleServiceDetails";
 import Gellery from "./Pages/Gallery/Gellery";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/gallery",
-        element: <Gellery></Gellery>
+        element: <Gellery></Gellery>,
       },
       {
         path: "/service",
@@ -66,7 +67,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>
 );

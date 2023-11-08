@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, signUpWithGoogle } = useContext(AuthContext);
@@ -111,6 +112,9 @@ const Register = () => {
 
   return (
     <div>
+       <Helmet>
+          <title>Tripify | Register</title>
+        </Helmet>
       <div className="flex w-60 items-center text-center mx-auto px-6">
         <img src={tripify} alt="" />
       </div>

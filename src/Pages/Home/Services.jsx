@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ServiceDetails from "./ServiceDetails";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Services = ({ isHome }) => {
   const [services, setServices] = useState([]);
@@ -26,6 +27,9 @@ const Services = ({ isHome }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Home | Service</title>
+      </Helmet>
       <div>
         <h1 className="text-center mt-20 font-bold text-4xl font-heading">
           Popular Destination

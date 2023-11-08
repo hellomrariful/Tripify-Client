@@ -1,7 +1,6 @@
-import React from "react";
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import Gallery from "./Gellery";
 
 const Gellery = () => {
   const imageUrls = [
@@ -55,12 +54,12 @@ const Gellery = () => {
   };
   return (
     <div>
+      <Helmet>
+       <title>Tripify | Gallery</title>
+      </Helmet>
       <div className="mt-20">
         <div>
-          <p className="text-center text-[#524FF5] text-2xl font-semibold uppercase tracking-[8px] mb-1">
-            OUR Recent Event Gallery
-          </p>
-          <h1 className="text-center text-5xl font-bold mb-16">Live Events</h1>
+          <h1 className="text-center text-4xl font-bold mb-16 font-heading">Popular Place</h1>
         </div>
         <div className="">
           <div
@@ -105,11 +104,8 @@ const Gellery = () => {
         </div>
 
         <div className="mt-20">
-          <p className="text-center text-[#524FF5] text-2xl font-semibold uppercase tracking-[8px] mb-1">
-            Latest Captured Moments
-          </p>
-          <h1 className="text-center text-5xl font-bold mb-16">
-            Event Visuals
+          <h1 className="text-center text-4xl font-bold mb-16">
+           Our Happy Customer
           </h1>
         </div>
         <div className="mt-20 mx-auto text-center flex justify-center">

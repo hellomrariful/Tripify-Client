@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from '../../Provider/AuthProvider';
 import { useContext, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -90,6 +91,9 @@ const Login = () => {
 
   return (
     <div>
+       <Helmet>
+          <title>Tripify | Login</title>
+        </Helmet>
       <div className="flex w-60 items-center text-center mx-auto px-6">
         <img src={tripify} alt="" />
       </div>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const SingleServiceDetails = () => {
   const { id } = useParams(); // Extract the ID from the URL
@@ -27,6 +28,9 @@ const SingleServiceDetails = () => {
   // Render your component with the "service" data
   return (
     <div>
+      <Helmet>
+        <title>Tripify | Service Details</title>
+      </Helmet>
       <div className="flex mx-auto flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100">
         <img
           src={user.photoURL}

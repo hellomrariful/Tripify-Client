@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, Navigate } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../../assets/3.png";
 import { AuthContext } from "../../../Provider/AuthProvider";
@@ -7,9 +7,12 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+
   const handelSignOut = async () => {
     try {
       await logOut();
+
+      <Navigate state={location.pathname} to="/login"></Navigate>;
     } catch (error) {
       // Handle any potential errors during sign out
       console.error("Error signing out:", error);
@@ -36,33 +39,31 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/gallery">Gallery</NavLink>
         <NavLink to="/service">Services</NavLink>
-        {user ? null : 
-        <NavLink to="/register">Register</NavLink>
-        }
-         {user ? (
-        <div className="relative group">
-          <NavLink to="/dashboard">Dashboard</NavLink>
-          <ul className="hidden bg-white text-gray-700 group-hover:block absolute mt-2 space-y-2 px-4 py-2 border border-gray-200 rounded-lg shadow-lg">
-            <li>
-              <NavLink to="/dashboard/my-services">My Services</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/AddServices">Add Services</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/my-schedules">My Schedules</NavLink>
-            </li>
-          </ul>
-        </div>
-      ) : null}
-    </nav>
-  </>
+        {user ? null : <NavLink to="/register">Register</NavLink>}
+        {user ? (
+          <div className="relative group">
+            <NavLink to="/dashboard">Dashboard</NavLink>
+            <ul className="hidden bg-white text-gray-700 group-hover:block absolute mt-2 space-y-2 px-4 py-2 border border-gray-200 rounded-lg shadow-lg">
+              <li>
+                <NavLink to="/dashboard/my-services">My Services</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/AddServices">Add Services</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/my-schedules">My Schedules</NavLink>
+              </li>
+            </ul>
+          </div>
+        ) : null}
+      </nav>
+    </>
   );
 
   return (
     <nav className="bg-white border-gray-200">
       <div className=" flex flex-wrap items-center justify-between mx-auto mt-8 mb-10">
-        <Link to='/' className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo} className="h-12 mr-3" alt="" />
         </Link>
         <div className="flex items-center md:order-2">
@@ -96,10 +97,10 @@ const Navbar = () => {
               } absolute right-0 mt-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow`}
               id="user-dropdown"
             >
-               {user ? (
+              {user ? (
                 <div className="px-12 py-4">
                   <span className="block text-gray-900 text-center">
-                    <p>Welcome, {user.displayName}</p>
+                    <p>Welcome, {user?.displayName}</p>
                   </span>
                   <span className="block text-gray-500 truncate text-center">
                     <p>{user.email}</p>
@@ -116,14 +117,13 @@ const Navbar = () => {
                       </NavLink>
                     </li>
                     <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center">
-                      <NavLink >
+                      <NavLink>
                         <button>Dashboard</button>
                       </NavLink>
                     </li>
                     <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100  text-center">
-                      <Link to="/">
                         <button onClick={handelSignOut}>Sign Out</button>
-                      </Link>
+                
                     </li>
                   </ul>
                 ) : null}
@@ -174,11 +174,15 @@ const Navbar = () => {
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink>Dashboard</NavLink>
               </li>
-              {
-                user ? null : <li className="block text-gray-900  hover:text-blue-700">
-                <NavLink to="/register">Register</NavLink>
-              </li>
-              }
+              {user ? <>
+                  <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100  text-center">
+                   
+                      <button onClick={handelSignOut}>Sign Out</button>
+                  
+                  </li>
+                </> : (
+                null
+              )}
             </ul>
           </div>
         ) : null}
@@ -191,10 +195,8 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-     
-     {
-        
-     }
+
+      {}
     </nav>
   );
 };
