@@ -8,25 +8,25 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const faqItems = [
     {
-      question: "What is the purpose of this platform?",
+      question: <p className="font-heading">What is the purpose of this platform?</p>,
       answer:
-        "This platform allows service providers to offer their services and enables users to book those services conveniently.",
+        <p className="text-xl">This platform allows service providers to offer their services and enables users to book those services conveniently.</p>,
     },
     {
-      question: "How can I become a service provider on this platform?",
+      question: <p className="font-heading">How can I become a service provider on this platform?</p>,
       answer:
-        "To become a service provider, you can sign up, create a profile, and list your services with details.",
+        <p className="text-xl">To become a service provider, you can sign up, create a profile, and list your services with details.</p>,
     },
     {
-      question: "How do I book a service?",
+      question: <p className="font-heading">How do I communicate with the service provider?</p>,
       answer:
-        "To book a service, you can browse through the available services, select the one you want, and follow the booking process.",
+        <p className="text-xl">You can use the platforms messaging system to communicate with service providers regarding bookings and inquiries.</p>,
     },
     {
-      question: "How do I communicate with the service provider?",
+      question: <p className="font-heading">How can I become a service provider on this platform?</p>,
       answer:
-        "You can use the platform's messaging system to communicate with service providers regarding bookings and inquiries.",
-    },
+        <p className="text-xl">To book a service, you can browse through the available services, select the one you want, and follow the booking process.</p>,
+    }
   ];
 
   return (
@@ -222,7 +222,7 @@ const Home = () => {
             <div className="p-6 py-12 dark:bg-violet-400 dark:text-gray-900 bg-blue-500 rounded-xl mt-20">
               <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row items-center justify-between">
-                  <h2 className="text-center text-6xl tracki font-bold text-white">
+                  <h2 className="text-center text-4xl tracki font-bold text-white font-heading">
                     Up to 50% Off
                   </h2>
                   <div className="space-x-2 text-center py-2 lg:py-0 ">
@@ -379,10 +379,10 @@ const Home = () => {
 
       <div className="w-full mt-20 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white font-heading">
-          We Are Also Available in your Mobile
+          We Are Also Available in Mobile Section
         </h5>
         <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
-          Download our app form Google Play & Mac App store, and enjoy with us.
+          Download our app form Google Play & Mac App store, and enjoy the popular place with us.
         </p>
         <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
           <a

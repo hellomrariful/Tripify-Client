@@ -32,13 +32,14 @@ const ServiceDetails = ({ service }) => {
         />
 
         <div className="p-6">
-          <div>
-            <span className=" font-medium text-blue-600 uppercase dark:text-blue-400 text-xl">
+          <div >
+            <span className=" flex justify-end font-medium text-blue-600 uppercase dark:text-blue-400 text-xl">
               {ServicePrice}
             </span>
+            <h1 className="mb-2 text-blue-600">{ServiceArea}</h1>
             <a
               href="#"
-              className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
+              className="block text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
               role="link"
             >
               {serviceName}
@@ -49,9 +50,7 @@ const ServiceDetails = ({ service }) => {
           </div>
 
           <div className="mt-4">
-            {loading ? (
-            null
-            ) : (
+            {loading ? null : (
               <div className="flex items-center">
                 <div className="flex items-center">
                   <img
@@ -67,19 +66,16 @@ const ServiceDetails = ({ service }) => {
                     {user?.displayName}
                   </a>
                 </div>
-                <p className="text-blue-600 ml-10">
-                  {moment().format("ll")}
-                </p>
-                <h1 className="ml-10">Location: {ServiceArea}</h1>
+                <p className="text-blue-600 ml-10">{moment().format("ll")}</p>
                 
               </div>
             )}
           </div>
-          <Link className="flex md:ml-60" to={`/serviceDetails/${_id}`}>
-                  <button className="font-semibold py-2 md:py-1 bg-blue-500 px-3 md:px-2 rounded flex justify-end text-white">
-                    View Details
-                  </button>
-                </Link>
+          <Link className="flex justify-end" to={`/serviceDetails/${_id}`}>
+            <button className="font-semibold py-2 md:py-1 bg-blue-500 px-3 md:px-2 rounded flex justify-end text-white">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

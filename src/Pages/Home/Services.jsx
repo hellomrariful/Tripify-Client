@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ServiceDetails from "./ServiceDetails";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const Services = ({ isHome }) => {
@@ -47,12 +47,14 @@ const Services = ({ isHome }) => {
         ))}
       </div>
       {isHome ? (
+        <Link to={'/services'}>
         <button
           className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
-          onClick={() => navigate("/service")}
+          
         >
           See More
         </button>
+        </Link>
       ) : (
         // Conditional rendering of "Load More" button based on visibleServices and total services
         visibleServices < filteredServices.length && (

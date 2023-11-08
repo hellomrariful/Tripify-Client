@@ -1,63 +1,62 @@
 import { useContext, useState } from "react";
 import { Link, NavLink, Navigate } from "react-router-dom";
-import "./Navbar.css";
 import logo from "../../../assets/3.png";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
 
   const handelSignOut = async () => {
     try {
       await logOut();
-
       <Navigate state={location.pathname} to="/login"></Navigate>;
     } catch (error) {
-      // Handle any potential errors during sign out
       console.error("Error signing out:", error);
     }
   };
 
-  // Profile DropDown
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isDashboardMenuOpen, setDashboardMenuOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+  const toggleDashboardMenu = () => {
+    setDashboardMenuOpen(!isDashboardMenuOpen);
     setMobileMenuOpen(false);
   };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
-    setDropdownOpen(false);
+    setDashboardMenuOpen(false);
   };
 
   const NavLinks = (
-    <>
-      <nav className="flex gap-3 md:gap-4 lg:gap-10 lg:text-xl text-[18px]">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/gallery">Gallery</NavLink>
-        <NavLink to="/services">Services</NavLink>
-        {user ? null : <NavLink to="/register">Register</NavLink>}
-        {user ? (
-          <div className="relative group">
-            <NavLink to="/dashboard">Dashboard</NavLink>
-            <ul className="hidden bg-white text-gray-700 group-hover:block absolute mt-2 space-y-2 px-4 py-2 border border-gray-200 rounded-lg shadow-lg">
-              <li>
-                <NavLink to="/dashboard/my-services">My Services</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/AddServices">Add Services</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/my-schedules">My Schedules</NavLink>
-              </li>
-            </ul>
-          </div>
-        ) : null}
-      </nav>
-    </>
+    <nav className="flex gap-3 md:gap-4 lg:gap-10 lg:text-xl text-[18px]">
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/gallery">Gallery</NavLink>
+      <NavLink to="/services">Services</NavLink>
+      {user ? null : <NavLink to="/register">Register</NavLink>}
+      {user ? (
+        <div className="relative group">
+          <NavLink to="/dashboard" onClick={toggleDashboardMenu}>
+            Dashboard
+          </NavLink>
+          <ul
+            className={`${
+              isDashboardMenuOpen ? "block" : "hidden"
+            } bg-white text-gray-700 group-hover:block absolute mt-2 space-y-2 px-4 py-2 border border-gray-200 rounded-lg shadow-lg`}
+          >
+            <li>
+              <NavLink to="/dashboard/my-services">My Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/AddServices">Add Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/my-schedules">My Schedules</NavLink>
+            </li>
+          </ul>
+        </div>
+      ) : null}
+    </nav>
   );
 
   return (
@@ -73,10 +72,10 @@ const Navbar = () => {
                 type="button"
                 className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
                 id="user-menu-button"
-                aria-expanded={isDropdownOpen}
-                onClick={toggleDropdown}
+                aria-expanded={isDashboardMenuOpen}
+                onClick={toggleDashboardMenu}
               >
-                <span className="sr-only">Open user menu</span>
+                <span className="sr-only">Open dashboard menu</span>
                 <img
                   className="w-11 h-11 rounded-full"
                   src={user.photoURL}
@@ -93,9 +92,9 @@ const Navbar = () => {
 
             <div
               className={`z-50 ${
-                isDropdownOpen ? "block" : "hidden"
+                isDashboardMenuOpen ? "block" : "hidden"
               } absolute right-0 mt-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow`}
-              id="user-dropdown"
+              id="dashboard-dropdown"
             >
               {user ? (
                 <div className="px-12 py-4">
@@ -134,7 +133,7 @@ const Navbar = () => {
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover-bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="navbar-user"
-            aria-expanded={isDropdownOpen}
+            aria-expanded={isDashboardMenuOpen}
             onClick={toggleMobileMenu}
           >
             <span className="sr-only">Open main menu</span>
@@ -192,8 +191,6 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-
-      {}
     </nav>
   );
 };
