@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         element: <Gellery></Gellery>
       },
       {
-        path: "/services",
+        path: "/service",
         element: <Services></Services>,
         loader: () => fetch("http://localhost:5000/dashboard/AddService"),
       },
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5173/dashboard/AddServices/${params.id}`),
+          fetch(`http://localhost:5000/dashboard/AddServices/${params.id}`),
       },
     ],
   },

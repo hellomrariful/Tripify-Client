@@ -164,7 +164,7 @@ const Login = () => {
               <button
                 className="mt-6 block w-full select-none rounded-lg
              bg-[#524FF5] py-3 px-6 text-center align-middle font-sans font-bold uppercase text-white shadow-md shadow-[#6b6f68] transition-all hover:shadow-md
-              hover:shadow-[#A1F65E] focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+               focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="submit"
                 data-ripple-light="true"
               >
@@ -188,7 +188,7 @@ const Login = () => {
             </form>
             <button
               onClick={handelGoogleLogIn}
-              className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg hover:bg-gray-50 "
+              className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg hover:bg-gray-50"
             >
               <div className="py-2">
                 <svg className="w-6 h-6" viewBox="0 0 40 40">

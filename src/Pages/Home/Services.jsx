@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ServiceDetails from "./ServiceDetails";
 import { useNavigate } from "react-router-dom";
 
@@ -36,14 +36,9 @@ const Services = ({ isHome }) => {
       </div>
 
       {/* Search input field */}
-      <input
-        type="text"
-        placeholder="Search by service name"
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      />
+      
 
-      <div className="rounded-xl">
+      <div className="rounded-xl mt-20">
         {filteredServices.slice(0, visibleServices).map((service) => (
           <ServiceDetails key={service._id} service={service}></ServiceDetails>
         ))}

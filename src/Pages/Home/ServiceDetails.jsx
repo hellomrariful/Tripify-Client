@@ -7,7 +7,6 @@ import { Oval } from "react-loader-spinner";
 const ServiceDetails = ({ service }) => {
   const { user } = useContext(AuthContext);
   const {
-    name,
     ServiceArea,
     ServiceDescription,
     ServicePrice,
@@ -26,7 +25,7 @@ const ServiceDetails = ({ service }) => {
 
   return (
     <div>
-      <div className="max-w-3xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto">
+      <div className="max-w-3xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10">
         <img
           className="object-cover w-full h-72"
           src={ServicePhoto}
@@ -35,8 +34,8 @@ const ServiceDetails = ({ service }) => {
 
         <div className="p-6">
           <div>
-            <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-              Product
+            <span className=" font-medium text-blue-600 uppercase dark:text-blue-400 text-xl">
+              {ServicePrice}
             </span>
             <a
               href="#"
@@ -52,20 +51,20 @@ const ServiceDetails = ({ service }) => {
 
           <div className="mt-4">
             {loading ? (
-             <div className="flex justify-center items-center h-screen">
-             <Oval
-               height={50}
-               width={50}
-               color=" #FF444A"
-               wrapperStyle={{}}
-               wrapperClass=""
-               visible={true}
-               ariaLabel="oval-loading"
-               secondaryColor="#FF444A"
-               strokeWidth={4}
-               strokeWidthSecondary={2}
-             />
-           </div>
+              <div className="flex justify-center items-center h-screen">
+                <Oval
+                  height={50}
+                  width={50}
+                  color=" #FF444A"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="#FF444A"
+                  strokeWidth={4}
+                  strokeWidthSecondary={2}
+                />
+              </div>
             ) : (
               <div className="flex items-center">
                 <div className="flex items-center">
@@ -82,12 +81,14 @@ const ServiceDetails = ({ service }) => {
                     {user.displayName}
                   </a>
                 </div>
-                <p className="text-[#524FF5]">{moment().format("ll")}</p>
+                <p className="text-[#524FF5]">
+                  {moment().format("ll")}
+                </p>
                 <button className="py-1 px-2"></button>
                 <h1>Location: {ServiceArea}</h1>
-                <Link to={`/serviceDetails/:${_id}`}>
-                  <button className="font-semibold py-3 bg-blue-500 px-3 rounded flex justify-end ">
-                    Add To Cart
+                <Link className="flex md:ml-60" to={`/serviceDetails/${_id}`}>
+                  <button className="font-semibold py-2 md:py-1 bg-blue-500 px-3 md:px-2 rounded flex justify-end text-white">
+                    View Details
                   </button>
                 </Link>
               </div>
@@ -100,10 +101,6 @@ const ServiceDetails = ({ service }) => {
 };
 
 export default ServiceDetails;
-
-
-
-
 
 // import { useContext } from "react";
 // import { Link } from "react-router-dom";
@@ -240,7 +237,7 @@ export default ServiceDetails;
 //             <h1>Location: {ServiceArea}</h1>
 //             <Link><button className="font-semibold py-3 bg-blue-500 px-3 rounded flex justify-end">Add To Cart</button></Link>
 //             </div>
-            
+
 //           </div>
 //         </div>
 //       </div>

@@ -35,7 +35,7 @@ const Navbar = () => {
       <nav className="flex gap-3 md:gap-4 lg:gap-10 lg:text-xl text-[18px]">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/gallery">Gallery</NavLink>
-        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/service">Services</NavLink>
         {user ? null : 
         <NavLink to="/register">Register</NavLink>
         }
@@ -84,7 +84,7 @@ const Navbar = () => {
               </button>
             ) : (
               <Link to="/login">
-                <button className="md:px-6 rounded bg-[#A1F65E] md:py-3 text-xl px-3 py-2 mr-1">
+                <button className="md:px-6 rounded bg-blue-600 md:py-3 text-xl px-3 py-2 mr-1 text-white">
                   Login
                 </button>
               </Link>
@@ -170,6 +170,7 @@ const Navbar = () => {
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink to="/gallery">Gallery</NavLink>
               </li>
+              <NavLink to="/service">Services</NavLink>
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink>Dashboard</NavLink>
               </li>

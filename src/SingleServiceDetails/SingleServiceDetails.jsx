@@ -7,6 +7,8 @@ const SingleServiceDetails = () => {
 
   const [service, setService] = useState({});
 
+  console.log(service.ServiceArea);
+
   const {user} = useContext(AuthContext)
 
 
@@ -37,7 +39,7 @@ const SingleServiceDetails = () => {
             <p className="px-5 text-xs sm:text-base dark:text-gray-400">
               5 years of experience
             </p>
-            <p>Location: Sylhet</p>
+            <p>Location: {service.ServiceArea}</p>
           </div>
           <div className="flex justify-center pt-2 space-x-4 align-center">
             <a

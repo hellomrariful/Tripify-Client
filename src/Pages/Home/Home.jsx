@@ -1,10 +1,7 @@
-import { FaFacebook, FaInstagram, FaStar, FaTwitter } from "react-icons/fa";
 import Banner from "./Banner";
 import Faq from "./Faq";
 import Services from "./Services";
-import Trainer1 from "../../assets/T-01.png";
-import Trainer2 from "../../assets/T-02.png";
-import Trainer3 from "../../assets/T-03.png";
+
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -225,22 +222,20 @@ const Home = () => {
                     Up to 50% Off
                   </h2>
                   <div className="space-x-2 text-center py-2 lg:py-0 ">
-                    <span>
-                      Don’t Miss The 50% Discount if You register Today. use
-                    </span>
-                    <span className="font-bold text-lg text-red-300">
-                      Friday
+                    <span className=" text-white">
+                      Don’t Miss The 50% Discount if You Register Today.
                     </span>
                   </div>
-                  <Link to={'/register'} className="px-2 text-center   py-2 rounded-md border block dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400 text-white ml-20">
-                  Register Now
+                  <Link
+                    to={"/register"}
+                    className="px-2 text-center   py-2 rounded-md border block dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400 text-white ml-20"
+                  >
+                    Register Now
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-
-         
         </div>
       </div>
 
@@ -369,135 +364,18 @@ const Home = () => {
 </section>
       </div> */}
 
-      <div>
-        <div
-        // data-aos="fade-up"
-        // data-aos-easing="ease-out-cubic"
-        // data-aos-duration="1000"
-        // data-aos-offset="100"
-        >
-          <p className="text-center text-[#524FF5] text-2xl font-semibold uppercase tracking-[8px] mb-1 mt-20">
-            We Trained You to Gain
-          </p>
-          <h1 className="text-center text-5xl font-bold mb-16">Our Trainers</h1>
-
-          <div>
-            <div className="grid md:grid-cols-3 space-x-4 ">
-              <div className="bg-[#1B2129]">
-                <div className="bg-[#D3D3D3] -mt-3">
-                  <img
-                    className=" mx-auto"
-                    src={Trainer2}
-                    alt="profile-picture"
-                  />
-                </div>
-
-                <div className="p-6 text-white">
-                  <div className="flex justify-between items-center">
-                    <h4 className="mb-2 text-2xl font-semibold">Steve Smith</h4>
-                    <span className="flex items-center text-xl  text-[#FFA722]">
-                      <FaStar></FaStar>
-                      <span className="text-white">/5</span>
-                    </span>
-                  </div>
-                  <p className="border-[#49505A] border"></p>
-                  <p className="mt-4 mb-1 text-xl font-semibold">
-                    Specializations :
-                  </p>
-                  <p className=" text-xl font-normal text-[#858585]">
-                    Crosscut Export, Nutrition & Rehab
-                  </p>
-                  <div className="flex justify-center text-xl gap-4 mt-4">
-                    <FaInstagram></FaInstagram>
-                    <FaFacebook></FaFacebook>
-                    <FaTwitter></FaTwitter>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-[#1B2129]">
-                <div className="bg-[#D3D3D3]">
-                  <img
-                    className="mx-auto"
-                    src={Trainer1}
-                    alt="profile-picture"
-                  />
-                </div>
-
-                <div className="p-6 text-white">
-                  <div className="flex justify-between items-center">
-                    <h4 className="mb-2 text-2xl font-semibold">
-                      Madison Froning
-                    </h4>
-                    <span className="flex items-center text-xl  text-[#FFA722]">
-                      <FaStar></FaStar>
-                      <span className="text-white">/5</span>
-                    </span>
-                  </div>
-                  <p className="border-[#49505A] border"></p>
-                  <p className="mt-4 mb-1 text-xl font-semibold">
-                    Specializations :
-                  </p>
-                  <p className=" text-xl font-normal text-[#858585]">
-                    Fitness Fashion Export, Fiesta & Rehab
-                  </p>
-                  <div className="flex justify-center text-xl gap-4 mt-4">
-                    <FaInstagram></FaInstagram>
-                    <FaFacebook></FaFacebook>
-                    <FaTwitter></FaTwitter>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-[#1B2129]">
-                <div className=" bg-[#D3D3D3]">
-                  <img
-                    className="mx-auto"
-                    src={Trainer3}
-                    alt="profile-picture"
-                  />
-                </div>
-
-                <div className="p-6 text-white">
-                  <div className="flex justify-between items-center">
-                    <h4 className="mb-2 text-2xl font-semibold">
-                      Jhon Willson
-                    </h4>
-                    <span className="flex items-center text-xl  text-[#FFA722]">
-                      <FaStar></FaStar>
-                      <span className="text-white">/5</span>
-                    </span>
-                  </div>
-                  <p className="border-[#49505A] border"></p>
-                  <p className="mt-4 mb-1 text-xl font-semibold">
-                    Specializations :
-                  </p>
-                  <p className=" text-xl font-normal text-[#858585]">
-                    Meditation Export, Mental & Yoga
-                  </p>
-                  <div className="flex justify-center text-xl gap-4 mt-4">
-                    <FaInstagram></FaInstagram>
-                    <FaFacebook></FaFacebook>
-                    <FaTwitter></FaTwitter>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* discount */}
 
       <h1 className="text-center mt-20 font-bold text-4xl font-heading mb-5">
-            Have Question?
-          </h1>
-          <div className="text-2xl">
-            <Faq faqItems={faqItems} />
-          </div>
+        Have Question?
+      </h1>
+      <div className="text-2xl">
+        <Faq faqItems={faqItems} />
+      </div>
 
       <div className="w-full mt-20 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
-          Your Are Also Available in your Mobile
+          We Are Also Available in your Mobile
         </h5>
         <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
           Download our app form Google Play & Mac App store, and enjoy with us.

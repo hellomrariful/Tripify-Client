@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
     <div>
@@ -10,15 +12,17 @@ const Banner = () => {
           }}
         >
           <div className="flex items-center justify-center w-full h-full bg-gray-900/40 rounded-xl">
-            <div className=" ">
-              <h1 className="text-3xl font-semibold text-white lg:text-4xl text-center font-heading">
+            <div >
+              <h1 className="text-3xl font-semibold text-white lg:text-4xl text-center font-heading md:w-72 lg:w-full">
                 Discover Your Life,
-                <span className="text-blue-400">Travel </span> Where You Want
+                <span className="text-blue-500">Travel </span> Where You Want
               </h1>
-              <h3 className="mt-2 w-130">Would you explore natur paradise in the world, let’s find the best destination in world with us.</h3>
-              <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                Start project
+              <h3 className="mt-2 lg:w-130 text-gray-200 md:w-80 mx-auto">Would you explore natur paradise in the world, let’s find the best destination in world with us.</h3>
+              <Link to={'/service'}>
+              <button className="px-5 py-3 mt-4 font-medium text-white transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 text-center  md:ml-20 lg:ml-56">
+                See Place
               </button>
+              </Link>
             </div>
           </div>
         </div>
