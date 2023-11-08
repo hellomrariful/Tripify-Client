@@ -20,12 +20,8 @@ const Footer = () => {
                 >
                   Home
                 </a>
-                <a
-                  href="#"
-                  className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]"
-                >
-                  About
-                </a>
+                <Link to={'/gallery'}  className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]">Gallery</Link>
+                
                 <a
                   href="#"
                   className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]"

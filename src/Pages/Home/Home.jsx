@@ -1,11 +1,11 @@
 import { FaFacebook, FaInstagram, FaStar, FaTwitter } from "react-icons/fa";
 import Banner from "./Banner";
 import Faq from "./Faq";
-import HomeServiceCard from "./HomeServiceCard";
 import Services from "./Services";
 import Trainer1 from "../../assets/T-01.png";
 import Trainer2 from "../../assets/T-02.png";
 import Trainer3 from "../../assets/T-03.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const faqItems = [
@@ -34,10 +34,7 @@ const Home = () => {
   return (
     <div>
       <Banner> </Banner>
-      <HomeServiceCard></HomeServiceCard>
-      <Services isHome={true} ></Services>
-
-
+      <Services isHome={true}></Services>
 
       <div>
         <h1 className="text-center mt-20 font-bold text-4xl font-heading">
@@ -229,27 +226,22 @@ const Home = () => {
                     Up to 50% Off
                   </h2>
                   <div className="space-x-2 text-center py-2 lg:py-0 ">
-                    <span>Don’t Miss The 50% Discount if You register Today. use</span>
-                    <span className="font-bold text-lg text-red-300">Friday</span>
+                    <span>
+                      Don’t Miss The 50% Discount if You register Today. use
+                    </span>
+                    <span className="font-bold text-lg text-red-300">
+                      Friday
+                    </span>
                   </div>
-                  <a
-                    href="#"
-                    rel="noreferrer noopener"
-                    className="px-2 text-center   py-2 rounded-md border block dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400 text-white ml-20"
-                  >
-                    Shop Now
-                  </a>
+                  <Link to={'/register'} className="px-2 text-center   py-2 rounded-md border block dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400 text-white ml-20">
+                  Register Now
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          <h1 className="text-center mt-20 font-bold text-4xl font-heading mb-5">
-            Have Question?
-          </h1>
-          <div className="text-2xl">
-            <Faq faqItems={faqItems} />
-          </div>
+         
         </div>
       </div>
 
@@ -372,6 +364,12 @@ const Home = () => {
 
       {/* discount */}
 
+      <h1 className="text-center mt-20 font-bold text-4xl font-heading mb-5">
+            Have Question?
+          </h1>
+          <div className="text-2xl">
+            <Faq faqItems={faqItems} />
+          </div>
 
       <div className="w-full mt-20 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">

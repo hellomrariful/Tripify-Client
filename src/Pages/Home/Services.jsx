@@ -1,16 +1,13 @@
-// 
-
-
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ServiceDetails from "./ServiceDetails";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Services = ({ isHome }) => {
-
-
   const [services, setServices] = useState([]);
   const [visibleServices, setVisibleServices] = useState(4);
-  const loadIncrement = 4; // Number of services to load each time
+  const [searchText, setSearchText] = useState(""); // State for search input
+  const loadIncrement = 4;
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5000/dashboard/AddService")
@@ -21,11 +18,11 @@ const Services = ({ isHome }) => {
   const loadMore = () => {
     setVisibleServices(visibleServices + loadIncrement);
   };
-  
 
-  const seeMore = () => {
-   <Link to={'/services'}>See More</Link>
-  };
+  // Filter the services based on the search text
+  const filteredServices = services.filter((service) =>
+  service.name.toLowerCase().includes(searchText.toLowerCase())
+);
 
   return (
     <div>
@@ -34,28 +31,40 @@ const Services = ({ isHome }) => {
           Popular Destination
         </h1>
         <h1 className="text-center mt-1 font-normal">
-          Checkout Our Popular Packages & Destination
+          Checkout Our Popular Packages & Destinations
         </h1>
       </div>
+
+      {/* Search input field */}
+      <input
+        type="text"
+        placeholder="Search by service name"
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+      />
+
       <div className="rounded-xl">
-        {services.slice(0, visibleServices).map((service) => (
+        {filteredServices.slice(0, visibleServices).map((service) => (
           <ServiceDetails key={service._id} service={service}></ServiceDetails>
         ))}
       </div>
       {isHome ? (
         <button
           className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
-          onClick={seeMore}
+          onClick={() => navigate('/services')}
         >
           See More
         </button>
       ) : (
-        <button
-          className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
-          onClick={loadMore}
-        >
-          Load More
-        </button>
+        // Conditional rendering of "Load More" button based on visibleServices and total services
+        visibleServices < filteredServices.length && (
+          <button
+            className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
+            onClick={loadMore}
+          >
+            Load More
+          </button>
+        )
       )}
     </div>
   );
