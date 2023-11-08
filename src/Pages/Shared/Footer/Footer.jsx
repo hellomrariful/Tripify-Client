@@ -28,12 +28,9 @@ const Footer = () => {
                 >
                   Terms & Condition
                 </a>
-                <a
-                  href="#"
-                  className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]"
-                >
-                  Privacy Policy
-                </a>
+                <Link to={'services'} className="mx-4 text-[#858585] transition-colors duration-300 hover:text-[#524FF5]">
+                Services
+                </Link>
               </div>
             </div>
 

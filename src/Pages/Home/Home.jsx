@@ -86,7 +86,7 @@ const Home = () => {
                 fill="#0C0C0C"
               />
             </svg>
-            <h1 className=" text-descriptionColor text-xl">Latest Guide</h1>
+            <h1 className=" text-descriptionColor text-xl">Popular Place</h1>
           </div>
           <div className="md:flex grid place-items-center items-center gap-1">
             <svg
