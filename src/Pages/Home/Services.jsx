@@ -11,7 +11,7 @@ const Services = ({ isHome }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/dashboard/AddService")
+    fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService")
       .then((response) => response.json())
       .then((data) => setServices(data));
   }, []);
@@ -22,8 +22,8 @@ const Services = ({ isHome }) => {
 
   // Filter the services based on the search text
   const filteredServices = services.filter((service) =>
-  service.name.toLowerCase().includes(searchText.toLowerCase())
-);
+    service.name.toLowerCase().includes(searchText.toLowerCase())
+  );
 
   return (
     <div>
@@ -40,7 +40,6 @@ const Services = ({ isHome }) => {
       </div>
 
       {/* Search input field */}
-      
 
       <div className="rounded-xl mt-20">
         {filteredServices.slice(0, visibleServices).map((service) => (
@@ -50,7 +49,7 @@ const Services = ({ isHome }) => {
       {isHome ? (
         <button
           className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
-          onClick={() => navigate('/service')}
+          onClick={() => navigate("/service")}
         >
           See More
         </button>

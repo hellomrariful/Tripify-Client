@@ -10,13 +10,12 @@ const SingleServiceDetails = () => {
 
   console.log(service.ServiceArea);
 
-  const {user} = useContext(AuthContext)
-
+  const { user } = useContext(AuthContext);
 
   console.log(service.name);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/dashboard/AddServices/${id}`)
+    fetch(`https://tripify-server-cyan.vercel.app/dashboard/AddServices/${id}`)
       .then((response) => response.json())
       .then((data) => setService(data));
   }, [id]); // Make sure to include "id" as a dependency
@@ -39,7 +38,9 @@ const SingleServiceDetails = () => {
         />
         <div className="space-y-4 text-center divide-y divide-gray-700">
           <div className="my-2 space-y-1">
-            <h2 className="text-xl font-semibold sm:text-2xl">{user.displayName}</h2>
+            <h2 className="text-xl font-semibold sm:text-2xl">
+              {user.displayName}
+            </h2>
             <p className="px-5 text-xs sm:text-base dark:text-gray-400">
               5 years of experience
             </p>

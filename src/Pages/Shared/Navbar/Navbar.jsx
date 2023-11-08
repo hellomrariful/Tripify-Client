@@ -38,7 +38,7 @@ const Navbar = () => {
       <nav className="flex gap-3 md:gap-4 lg:gap-10 lg:text-xl text-[18px]">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/gallery">Gallery</NavLink>
-        <NavLink to="/service">Services</NavLink>
+        <NavLink to="/services">Services</NavLink>
         {user ? null : <NavLink to="/register">Register</NavLink>}
         {user ? (
           <div className="relative group">
@@ -170,7 +170,7 @@ const Navbar = () => {
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink to="/gallery">Gallery</NavLink>
               </li>
-              <NavLink to="/service">Services</NavLink>
+              <NavLink to="/services">Services</NavLink>
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink>Dashboard</NavLink>
               </li>

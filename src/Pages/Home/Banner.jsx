@@ -18,7 +18,7 @@ const Banner = () => {
                 <span className="text-blue-500">Travel </span> Where You Want
               </h1>
               <h3 className="mt-2 lg:w-130 text-gray-200 md:w-80 mx-auto">Would you explore natur paradise in the world, let’s find the best destination in world with us.</h3>
-              <Link to={'/service'}>
+              <Link to={'/services'}>
               <button className="px-5 py-3 mt-4 font-medium text-white transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 text-center  md:ml-20 lg:ml-56">
                 See Place
               </button>

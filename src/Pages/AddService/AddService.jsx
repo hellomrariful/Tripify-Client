@@ -19,28 +19,37 @@ const AddService = () => {
     const ServicePhoto = form.ServicePhoto.value;
     const ServiceProviderPhoto = form.ServiceProviderPhoto.value;
     const ServiceDescription = form.ServiceDescription.value;
-    const Service = { name, email, serviceName, ServicePrice, ServiceArea, ServicePhoto, ServiceProviderPhoto, ServiceDescription };
+    const Service = {
+      name,
+      email,
+      serviceName,
+      ServicePrice,
+      ServiceArea,
+      ServicePhoto,
+      ServiceProviderPhoto,
+      ServiceDescription,
+    };
     console.log(Service);
 
     // send data to server
     // const url = "https://gadger-store-server.vercel.app/Services"
     // axios.get(url, {withCredentials: true})
 
-    fetch("http://localhost:5000/dashboard/AddService", {
-        method: "POST",
-        headers: {
-          "content-type":"application/json"
-        },
-        body: JSON.stringify(Service)
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.insertedId) {
-            Swal.fire("Good job!", "Service Added", "success");
-          }
-          // form.reset();
-        });
+    fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(Service),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire("Good job!", "Service Added", "success");
+        }
+        // form.reset();
+      });
   };
 
   return (
