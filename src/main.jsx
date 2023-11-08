@@ -1,20 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import './index.css'
-import Root from './Layout/Root';
-import Error from './Pages/Error/Error';
-import Home from './Pages/Home/Home';
-import Login from './Pages/Login/Login';
-import Register from './Pages/Register/Register';
-import AuthProvider from './Provider/AuthProvider';
-import AddService from './Pages/AddService/AddService';
-import PrivateRoute from './PrivateRoute/PrivateRoute';
-import Services from './Pages/Home/Services';
-import SingleServiceDetails from './SingleServiceDetails/SingleServiceDetails';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import Root from "./Layout/Root";
+import Error from "./Pages/Error/Error";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
+import AuthProvider from "./Provider/AuthProvider";
+import AddService from "./Pages/AddService/AddService";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Services from "./Pages/Home/Services";
+import SingleServiceDetails from "./SingleServiceDetails/SingleServiceDetails";
+import Gellery from "./Pages/Gallery/Gellery";
 
 const router = createBrowserRouter([
   {
@@ -24,44 +22,51 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
+      },
+      {
+        path: "/gallery",
+        element: <Gellery></Gellery>
       },
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () =>
-          fetch("http://localhost:5000/dashboard/AddService"),
+        loader: () => fetch("http://localhost:5000/dashboard/AddService"),
       },
       {
         path: "/dashboard/AddServices",
-        element: <PrivateRoute><AddService></AddService></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/serviceDetails/:id",
-        element: <PrivateRoute>
-          <SingleServiceDetails></SingleServiceDetails>
-        </PrivateRoute>,
-        loader: ({params}) =>
-        fetch(`http://localhost:5173/dashboard/AddServices/${params.id}`)
-
-      }
-    ]
+        element: (
+          <PrivateRoute>
+            <SingleServiceDetails></SingleServiceDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5173/dashboard/AddServices/${params.id}`),
+      },
+    ],
   },
 ]);
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-   <AuthProvider>
-   <RouterProvider router={router} />
-   </AuthProvider>
-  </React.StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
+);
