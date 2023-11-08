@@ -54,11 +54,13 @@ const Gellery = () => {
   return (
     <div>
       <Helmet>
-       <title>Tripify | Gallery</title>
+        <title>Tripify | Gallery</title>
       </Helmet>
       <div className="mt-20">
         <div>
-          <h1 className="text-center text-4xl font-bold mb-16 font-heading">Popular Place</h1>
+          <h1 className="text-center text-4xl font-bold mb-16 font-heading">
+            Popular Place
+          </h1>
         </div>
         <div className="">
           <div
@@ -104,7 +106,7 @@ const Gellery = () => {
 
         <div className="mt-20">
           <h1 className="text-center text-4xl font-bold mb-16 font-heading">
-           Our Happy Customer
+            Our Happy Customer
           </h1>
         </div>
         <div className="mt-20 mx-auto text-center flex justify-center">

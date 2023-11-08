@@ -122,8 +122,7 @@ const Navbar = () => {
                       </NavLink>
                     </li>
                     <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100  text-center">
-                        <button onClick={handelSignOut}>Sign Out</button>
-                
+                      <button onClick={handelSignOut}>Sign Out</button>
                     </li>
                   </ul>
                 ) : null}
@@ -174,15 +173,13 @@ const Navbar = () => {
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink>Dashboard</NavLink>
               </li>
-              {user ? <>
+              {user ? (
+                <>
                   <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100  text-center">
-                   
-                      <button onClick={handelSignOut}>Sign Out</button>
-                  
+                    <button onClick={handelSignOut}>Sign Out</button>
                   </li>
-                </> : (
-                null
-              )}
+                </>
+              ) : null}
             </ul>
           </div>
         ) : null}
