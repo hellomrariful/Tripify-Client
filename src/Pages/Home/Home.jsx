@@ -8,24 +8,24 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const faqItems = [
     {
-      question: "How can I place an order on GadgerBD?",
+      question: "What is the purpose of this platform?",
       answer:
-        "To place an order on GadgerBD, follow these simple steps: Browse our product catalog and select the item you want to purchase. Click the 'Add to Cart' button. Review the items in your cart. Provide your shipping information and payment details. Once confirmed, click Place Order.",
+        "This platform allows service providers to offer their services and enables users to book those services conveniently.",
     },
     {
-      question: "What payment methods do you accept?",
+      question: "How can I become a service provider on this platform?",
       answer:
-        "We accept various payment methods, including credit/debit cards, PayPal, and other secure online payment options.",
+        "To become a service provider, you can sign up, create a profile, and list your services with details.",
     },
     {
-      question: "What is your return and refund policy?",
+      question: "How do I book a service?",
       answer:
-        "Our return and refund policy can be found in our 'Returns & Refunds' section. We outline the conditions for returns and the process for requesting a refund.",
+        "To book a service, you can browse through the available services, select the one you want, and follow the booking process.",
     },
     {
-      question: "Do you offer international shipping?",
+      question: "How do I communicate with the service provider?",
       answer:
-        "Yes, we do offer international shipping. Please note that additional shipping fees may apply, and delivery times can vary based on your location.",
+        "You can use the platform's messaging system to communicate with service providers regarding bookings and inquiries.",
     },
   ];
 
