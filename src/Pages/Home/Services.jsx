@@ -63,18 +63,17 @@
 //   );
 // };
 
-
-
-
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ServiceDetails from "./ServiceDetails";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
-const Services = () => {
+const Services = ({ isHome }) => {
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService")
       .then((res) => res.json())
-      .then(data => setServices(data))
+      .then((data) => setServices(data));
   }, []);
 
   const [value, setValue] = useState([]);
@@ -87,7 +86,6 @@ const Services = () => {
     setValue(search);
   };
 
-
   const searchValue = services.filter((service) => {
     if (value == "") {
       return service;
@@ -98,42 +96,82 @@ const Services = () => {
 
   return (
     <div className="mb-10">
+      <Helmet>
+        <title>Tripify | Service Details</title>
+      </Helmet>
       <div className="relative">
-        <div className="text-center md:py-32 pt-10 bg-white bg-opacity-90">
-          <h1 className="text-2xl md:text-5xl font-bold py-3">
-            Your Health,<span className="text-emerald-400">Our Priority</span>
-          </h1>
-
-          <div className="pt-7">
-            <input
-              type="search"
-              name="search"
-              className="rounded-l-lg border-slate-400 outline-none w-[30vh] py-3  border"
-              placeholder="search here..."
-              onChange={handleInputChange}
-            />
-           
+        <div className="text-center mt-24 bg-white bg-opacity-90">
+          <div>
+            {isHome ? (
+              <div>
+                <h1 className="text-center mt-20 font-bold text-4xl font-heading">
+                  Popular Destination
+                </h1>
+                <h1 className="text-center mt-1 font-normal">
+                  Checkout Our Popular Packages & Destinations
+                </h1>
+              </div>
+            ) : (
+              <>
+                <div>
+                  <h1 className="text-center mt-20 font-bold text-4xl font-heading">
+                    All <span className=" text-blue-600">Popular</span> Services
+                  </h1>
+                  <h1 className="text-center mt-1 font-normal">
+                    Checkout Our Popular Services & Trending Destinations
+                  </h1>
+                </div>
+                <div className="pt-7">
+                  <input
+                    type="search"
+                    name="search"
+                    className="rounded border-slate-400 outline-none w-[30vh] py-3 border pl-2"
+                    placeholder="search here..."
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
-      <h1 className="text-center text-3xl md:text-5xl font-bold py-10 md:py-10">
-        All <span className="text-emerald-400">Services</span>
-      </h1>
-      <div className="grid md:grid-cols-3 gap-5 pb-10">
+
+      <div className="grid md:grid-cols-3 mt-10 gap-5 pb-10">
         {isShow
-          ? searchValue.map((service) => <ServiceDetails key={service.id} service={service}></ServiceDetails>)
+          ? searchValue.map((service) => (
+              <ServiceDetails
+                key={service.id}
+                service={service}
+              ></ServiceDetails>
+            ))
           : searchValue
-              .slice(0, 3)
-              .map((service) => <ServiceDetails key={service.id} service={service}></ServiceDetails>)}
+              .slice(0, 4)
+              .map((service) => (
+                <ServiceDetails
+                  key={service.id}
+                  service={service}
+                ></ServiceDetails>
+              ))}
       </div>
-      {(searchValue.length > 3 && !isShow) && (
-      <button
-        className="block bg-green-400 mx-auto px-6 py-2 rounded font-bold text-white mt-10"
-        onClick={() => setIsShow(!isShow)}
-      >
-        See All
-      </button>
-      ) }
+
+      {isHome ? (
+        <Link to="/services">
+          <button className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12">
+            See More
+          </button>
+        </Link>
+      ) : (
+        <>
+          {searchValue.length > 4 && !isShow && (
+            <button
+              className="block bg-blue-600 mx-auto px-6 py-3 rounded font-bold text-white mt-10"
+              onClick={() => setIsShow(!isShow)}
+            >
+              Load More
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 };
