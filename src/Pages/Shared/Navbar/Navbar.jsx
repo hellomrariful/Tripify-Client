@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, NavLink, Navigate } from "react-router-dom";
 import logo from "../../../assets/3.png";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import css from "./Navbar.css"
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -36,7 +37,7 @@ const Navbar = () => {
       {user ? null : <NavLink to="/register">Register</NavLink>}
       {user ? (
         <div className="relative group">
-          <NavLink to="/dashboard" onClick={toggleDashboardMenu}>
+          <NavLink onClick={toggleDashboardMenu}>
             Dashboard
           </NavLink>
           <ul

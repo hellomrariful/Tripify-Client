@@ -2,9 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import moment from "moment";
+import { HiLocationMarker } from 'react-icons/hi';
+
 
 const ServiceDetails = ({ service }) => {
   const { user } = useContext(AuthContext);
+
   const {
     ServiceArea,
     ServiceDescription,
@@ -12,7 +15,7 @@ const ServiceDetails = ({ service }) => {
     ServicePhoto,
     serviceName,
     _id,
-  } = service;
+  } = service
 
   const [loading, setLoading] = useState(true);
 
@@ -24,9 +27,10 @@ const ServiceDetails = ({ service }) => {
 
   return (
     <div>
-      <div className="max-w-5xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10">
+     
+      <div className=" overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10">
         <img
-          className="object-cover w-full h-72"
+          className="object-cover w-full h-96"
           src={ServicePhoto}
           alt="Article"
         />
@@ -36,7 +40,12 @@ const ServiceDetails = ({ service }) => {
             <span className=" flex justify-end font-medium text-blue-600 uppercase dark:text-blue-400 text-xl">
               {ServicePrice}
             </span>
-            <h1 className="mb-2 text-blue-600">{ServiceArea}</h1>
+            <div className="flex">
+               <h1>
+                <HiLocationMarker className=" text-blue-600 mt-1 "></HiLocationMarker>
+                </h1>
+                <h1 className="mb-2 text-blue-600 ml-1">{service.ServiceArea}</h1>
+               </div>
             <a
               href="#"
               className="block text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
@@ -66,7 +75,7 @@ const ServiceDetails = ({ service }) => {
                     {user?.displayName}
                   </a>
                 </div>
-                <p className="text-blue-600 ml-10">{moment().format("ll")}</p>
+                <p className="text-blue-600 ml-3">{moment().format("ll")}</p>
                 
               </div>
             )}
