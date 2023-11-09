@@ -42,7 +42,8 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:5000/dashboard/AddService"),
+        loader: () =>
+          fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService"),
       },
       {
         path: "/dashboard/AddServices",
@@ -60,7 +61,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/dashboard/AddServices/${params.id}`),
+          fetch(
+            `https://tripify-server-cyan.vercel.app/dashboard/AddServices/${params.id}`
+          ),
       },
       {
         path: "/dashboard/ManageServices",
@@ -74,7 +77,7 @@ const router = createBrowserRouter([
         path: "/dashboard/MySchedules",
         element: (
           <PrivateRoute>
-           <MySchedules></MySchedules>
+            <MySchedules></MySchedules>
           </PrivateRoute>
         ),
       },

@@ -35,7 +35,7 @@ const AddService = () => {
     // const url = "https://gadger-store-server.vercel.app/Services"
     // axios.get(url, {withCredentials: true})
 
-    fetch("http://localhost:5000/dashboard/AddService", {
+    fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService", {
       method: "POST",
       headers: {
         "content-type": "application/json",

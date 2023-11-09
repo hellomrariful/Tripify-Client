@@ -8,7 +8,7 @@
 //   // const [searchText, setSearchText] = useState("");
 
 //   useEffect(() => {
-//     fetch("http://localhost:5000/dashboard/AddService")
+//     fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService")
 //       .then((response) => response.json())
 //       .then((data) => setServices(data));
 //   }, []);
@@ -71,7 +71,7 @@ import { Link } from "react-router-dom";
 const Services = ({ isHome }) => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/dashboard/AddService")
+    fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

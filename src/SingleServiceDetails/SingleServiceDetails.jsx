@@ -53,7 +53,7 @@ const SingleServiceDetails = () => {
 
         // Add code here to save the booking data to the database
 
-        fetch("http://localhost:5000/cart", {
+        fetch("https://tripify-server-cyan.vercel.app/cart", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -82,7 +82,7 @@ const SingleServiceDetails = () => {
   }, [user]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/dashboard/AddServices/${id}`)
+    fetch(`https://tripify-server-cyan.vercel.app/dashboard/AddServices/${id}`)
       .then((response) => response.json())
       .then((data) => setService(data));
   }, [id]);

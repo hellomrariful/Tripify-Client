@@ -15,7 +15,7 @@ const Cart = () => {
 
   useEffect(() => {
     if (userEmail) {
-      fetch(`http://localhost:5000/cart/${userEmail}`)
+      fetch(`https://tripify-server-cyan.vercel.app/cart/${userEmail}`)
         .then((res) => res.json())
         .then((data) => {
           // Set quantity to 1 by default
@@ -50,15 +50,13 @@ const Cart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${id}`, {
+        fetch(`https://tripify-server-cyan.vercel.app/cart/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              const remaining = cart.filter(
-                (product) => product._id !== id
-              );
+              const remaining = cart.filter((product) => product._id !== id);
               setCart(remaining);
             }
           });
@@ -95,10 +93,11 @@ const Cart = () => {
           <div className="md:flex my-10">
             <div className="md:w-3/4 rounded md:px-10 px-3 py-10 ">
               <div className="flex justify-between border-b pb-8">
-                <h1 className="font-semibold text-2xl font-heading">Your Cart</h1>
+                <h1 className="font-semibold text-2xl font-heading">
+                  Your Cart
+                </h1>
                 <h2 className="font-semibold text-2xl font-heading">
-                  {cart.length} {cart.length === 1 ? "Item" : "Items"}{" "}
-                  Added
+                  {cart.length} {cart.length === 1 ? "Item" : "Items"} Added
                 </h2>
               </div>
               <div className="flex mt-10 mb-5">
@@ -265,8 +264,8 @@ const Cart = () => {
             Your cart is currently empty!!
           </h1>
           <p className="text-center text-lg text-descriptionColor">
-            Before proceeding to checkout, you must add some cart to your
-            cart. You will find a lot of interesting cart on our
+            Before proceeding to checkout, you must add some cart to your cart.
+            You will find a lot of interesting cart on our
             <Link to="/shop">
               {" "}
               <span className=" text-primaryColor font-bold">Shop</span>
