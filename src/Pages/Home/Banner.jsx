@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
@@ -15,7 +16,21 @@ const Banner = () => {
             <div>
               <h1 className="text-3xl font-semibold text-white lg:text-4xl text-center font-heading md:w-72 lg:w-full">
                 Discover Your Life,
-                <span className="text-blue-500">Travel </span> Where You Want
+                <span className="text-blue-500">Travel </span> 
+                
+                <span style={{ color: "", fontWeight: "bold" }}>
+                  {/* Style will be inherited from the parent element */}
+                  <Typewriter
+                    words={[" Where You Want"]}
+                    loop={5}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={700}
+                  />
+                </span>
+
               </h1>
               <h3 className="mt-2 lg:w-130 text-gray-200 md:w-80 mx-auto">
                 Would you explore natur paradise in the world, let’s find the

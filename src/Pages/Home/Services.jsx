@@ -8,7 +8,7 @@
 //   // const [searchText, setSearchText] = useState("");
 
 //   useEffect(() => {
-//     fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService")
+//     fetch("http://localhost:5000/dashboard/AddService")
 //       .then((response) => response.json())
 //       .then((data) => setServices(data));
 //   }, []);
@@ -71,7 +71,7 @@ import { Link } from "react-router-dom";
 const Services = ({ isHome }) => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService")
+    fetch("http://localhost:5000/dashboard/AddService")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -136,7 +136,7 @@ const Services = ({ isHome }) => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 mt-10 gap-5 pb-10">
+      <div className="  ">
         {isShow
           ? searchValue.map((service) => (
               <ServiceDetails

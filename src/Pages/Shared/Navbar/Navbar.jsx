@@ -1,16 +1,19 @@
 import { useContext, useState } from "react";
-import { Link, NavLink, Navigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/3.png";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import css from "./Navbar.css"
+import css from "./Navbar.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  console.log(user);
 
   const handelSignOut = async () => {
     try {
       await logOut();
-      <Navigate state={location.pathname} to="/login"></Navigate>;
+      navigate("/login"); // Use navigate instead of returning Navigate component
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -32,31 +35,29 @@ const Navbar = () => {
   const NavLinks = (
     <nav className="flex gap-3 md:gap-4 lg:gap-10 lg:text-xl text-[18px]">
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/gallery">Gallery</NavLink>
       <NavLink to="/services">Services</NavLink>
       {user ? null : <NavLink to="/register">Register</NavLink>}
       {user ? (
         <div className="relative group">
-          <NavLink onClick={toggleDashboardMenu}>
-            Dashboard
-          </NavLink>
+          <NavLink onClick={toggleDashboardMenu}>Dashboard</NavLink>
           <ul
             className={`${
               isDashboardMenuOpen ? "block" : "hidden"
             } bg-white text-gray-700 group-hover:block absolute mt-2 space-y-2 px-4 py-2 border border-gray-200 rounded-lg shadow-lg`}
           >
             <li>
-              <NavLink to="/dashboard/my-services">My Services</NavLink>
-            </li>
-            <li>
               <NavLink to="/dashboard/AddServices">Add Services</NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/my-schedules">My Schedules</NavLink>
+              <NavLink to="dashboard/ManageServices">Manage Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/MySchedules">My Schedules</NavLink>
             </li>
           </ul>
         </div>
       ) : null}
+      <NavLink to="/gallery">Gallery</NavLink>
     </nav>
   );
 
@@ -103,7 +104,7 @@ const Navbar = () => {
                     <p>Welcome, {user?.displayName}</p>
                   </span>
                   <span className="block text-gray-500 truncate text-center">
-                    <p>{user.email}</p>
+                    <p>{user?.email}</p>
                   </span>
                 </div>
               ) : null}
@@ -114,11 +115,6 @@ const Navbar = () => {
                     <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center">
                       <NavLink to="/">
                         <button>Home</button>
-                      </NavLink>
-                    </li>
-                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center">
-                      <NavLink>
-                        <button>Dashboard</button>
                       </NavLink>
                     </li>
                     <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100  text-center">
@@ -166,13 +162,31 @@ const Navbar = () => {
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink to="/">Home</NavLink>
               </li>
+              <NavLink to="/services">Services</NavLink>
+
               <li className="block text-gray-900  hover:text-blue-700">
                 <NavLink to="/gallery">Gallery</NavLink>
               </li>
-              <NavLink to="/services">Services</NavLink>
-              <li className="block text-gray-900  hover:text-blue-700">
-                <NavLink>Dashboard</NavLink>
-              </li>
+              <div className="relative group">
+                <NavLink onClick={toggleDashboardMenu}>Dashboard</NavLink>
+                <ul
+                  className={`${
+                    isDashboardMenuOpen ? "block" : "hidden"
+                  } bg-white text-gray-700 group-hover:block absolute mt-2 space-y-2 px-4 py-2 border border-gray-200 rounded-lg shadow-lg`}
+                >
+                  <li>
+                    <NavLink to="/dashboard/AddServices">Add Services</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/ManageServices">
+                      Manage Services
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/MySchedules">My Schedules</NavLink>
+                  </li>
+                </ul>
+              </div>
               {user ? (
                 <>
                   <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100  text-center">

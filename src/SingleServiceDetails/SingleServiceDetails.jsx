@@ -48,7 +48,7 @@
 //   }, [user]);
 
 //   useEffect(() => {
-//     fetch(`https://tripify-server-cyan.vercel.app/dashboard/AddServices/${id}`)
+//     fetch(`http://localhost:5000/dashboard/AddServices/${id}`)
 //       .then((response) => response.json())
 //       .then((data) => setService(data));
 //   }, [id]); // Make sure to include "id" as a dependency
@@ -227,7 +227,6 @@ const SingleServiceDetails = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
 
-  // Define state variables for the modal input fields
   const [serviceTakingDate, setServiceTakingDate] = useState("");
   const [specialInstruction, setSpecialInstruction] = useState("");
 
@@ -268,11 +267,24 @@ const SingleServiceDetails = () => {
 
         // Add code here to save the booking data to the database
 
-        Swal.fire(
-          "Booking Successful",
-          "Your service has been booked.",
-          "success"
-        );
+        fetch("http://localhost:5000/cart", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(bookingData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire(
+                "Booking Successful",
+                "Your service has been booked.",
+                "success"
+              );
+            }
+          });
       },
     });
   };
@@ -284,7 +296,7 @@ const SingleServiceDetails = () => {
   }, [user]);
 
   useEffect(() => {
-    fetch(`https://tripify-server-cyan.vercel.app/dashboard/AddServices/${id}`)
+    fetch(`http://localhost:5000/dashboard/AddServices/${id}`)
       .then((response) => response.json())
       .then((data) => setService(data));
   }, [id]);

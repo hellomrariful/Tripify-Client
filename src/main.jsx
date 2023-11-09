@@ -14,6 +14,8 @@ import Services from "./Pages/Home/Services";
 import SingleServiceDetails from "./SingleServiceDetails/SingleServiceDetails";
 import Gellery from "./Pages/Gallery/Gellery";
 import { HelmetProvider } from "react-helmet-async";
+import ManageService from "./Pages/ManageService/ManageService";
+import MySchedules from "./MySchedules/MySchedules";
 
 const router = createBrowserRouter([
   {
@@ -40,8 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () =>
-          fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService"),
+        loader: () => fetch("http://localhost:5000/dashboard/AddService"),
       },
       {
         path: "/dashboard/AddServices",
@@ -59,9 +60,23 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://tripify-server-cyan.vercel.app/dashboard/AddServices/${params.id}`
-          ),
+          fetch(`http://localhost:5000/dashboard/AddServices/${params.id}`),
+      },
+      {
+        path: "/dashboard/ManageServices",
+        element: (
+          <PrivateRoute>
+            <ManageService></ManageService>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/MySchedules",
+        element: (
+          <PrivateRoute>
+           <MySchedules></MySchedules>
+          </PrivateRoute>
+        ),
       },
     ],
   },

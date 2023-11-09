@@ -27,7 +27,6 @@ const ServiceDetails = ({ service }) => {
 
   return (
     <div>
-     
       <div className=" overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10">
         <img
           className="object-cover w-full h-96"
