@@ -205,7 +205,7 @@ const Cart = () => {
                 </span>
                 <span className="font-semibold text-sm">
                   $
-                  {cart.reduce(
+                  {cart?.reduce(
                     (total, product) =>
                       total + product.price * product.quantity,
                     0
