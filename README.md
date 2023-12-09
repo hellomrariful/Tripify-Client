@@ -6,6 +6,14 @@
 Live URL: [https://tripifybd.web.app/](https://tripifybd.web.app/)
 
 <details>
+
+<summary style="font-weight: bold; text:2xl" >Description of Tripify BD</summary>
+Tripify is a Online career maker website. In this projects, user can earn money by guiding tourists in his area. This website has 3 role of user, 1.Admin, 2.Tourist, 3.Tour Guide. Tripify is built in MERN[MongoDB, Express.js, React.js, Node.js] Stake.
+
+
+</details>
+
+<details>
 <summary style="font-weight: bold; text:2xl" >Main features and functionalities of Tripify</summary>
 
 - This project is developed for making trip and travel.
