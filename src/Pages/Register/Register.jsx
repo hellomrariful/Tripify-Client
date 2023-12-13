@@ -6,12 +6,17 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Register = () => {
   const { createUser, signUpWithGoogle } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState("");
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
 
   const handelRegister = (e) => {
     e.preventDefault();
@@ -124,6 +129,9 @@ const Register = () => {
           <h4 className="block text-center text-[22px]">
             Create a new account
           </h4>
+          <div className="mx-auto mt-5">
+              <ReCAPTCHA sitekey="6LelPTApAAAAADWVe8dSbkcjltECOr38kOEygA9u" onChange={onChange} />
+            </div>
           {registerError && <p className="border-2 p-3 mt-6 border-[#de4523] bg-[#ffebe8] text-center text-black rounded">{registerError}</p>}
           <form
             onSubmit={handelRegister}

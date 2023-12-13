@@ -3,16 +3,20 @@ import tripify from "../../assets/3.png";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
-import { AuthContext } from '../../Provider/AuthProvider';
+import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Login = () => {
   const [show, setShow] = useState(false);
   const [loggedError, setLoggedError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
 
   const { signInUser, signUpWithGoogle } = useContext(AuthContext);
 
@@ -91,18 +95,19 @@ const Login = () => {
 
   return (
     <div>
-       <Helmet>
-          <title>Tripify | Login</title>
-        </Helmet>
+      <Helmet>
+        <title>Tripify | Login</title>
+      </Helmet>
       <div className="flex w-60 items-center text-center mx-auto px-6">
         <img src={tripify} alt="" />
       </div>
       <div className="flex justify-center">
         <div className=" px-8 py-12 bg-[#F7FAFC] rounded-2xl drop-shadow-2xl">
           <div className="relative flex flex-col shadow-none">
-            <h4 className="block text-center text-[22px]">
-              Log in to Tripify
-            </h4>
+            <h4 className="block text-center text-[22px]">Log in to Tripify</h4>
+            <div className="mx-auto mt-5">
+              <ReCAPTCHA sitekey="6LelPTApAAAAADWVe8dSbkcjltECOr38kOEygA9u" onChange={onChange} />
+            </div>
             <div>
               {loggedError && (
                 <p className="border-2 p-3 mt-6 border-[#de4523] bg-[#ffebe8]  text-black rounded">
