@@ -83,7 +83,7 @@ const Login = () => {
         };
         displayErrorToast();
 
-        // Delay the navigation for 2 seconds (2000 milliseconds) to display the success message.
+        
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 1000);
