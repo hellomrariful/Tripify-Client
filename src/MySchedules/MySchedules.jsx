@@ -1,9 +1,7 @@
-import React from 'react';
-
 const MySchedules = () => {
     return (
         <div>
-            hello
+            This is schedules page
         </div>
     );
 };
