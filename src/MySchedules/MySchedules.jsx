@@ -1,12 +1,5 @@
 const MySchedules = () => {
-    return (
-        <div>
-            This is schedules page
-            This is last commit
-        </div>
-    );
+  return <div></div>;
 };
 
 export default MySchedules;
-
-
