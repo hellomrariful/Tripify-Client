@@ -8,25 +8,55 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const faqItems = [
     {
-      question: <p className="font-heading">What is the purpose of this platform?</p>,
-      answer:
-        <p className="text-xl">This platform allows service providers to offer their services and enables users to book those services conveniently.</p>,
+      question: (
+        <p className="font-heading">What is the purpose of this platform?</p>
+      ),
+      answer: (
+        <p className="text-xl">
+          This platform allows offer their services and
+          enables users to book those services conveniently.
+        </p>
+      ),
     },
     {
-      question: <p className="font-heading">How can I become a service provider on this platform?</p>,
-      answer:
-        <p className="text-xl">To become a service provider, you can sign up, create a profile, and list your services with details.</p>,
+      question: (
+        <p className="font-heading">
+          How can I become a service provider on this platform?
+        </p>
+      ),
+      answer: (
+        <p className="text-xl">
+          To become a service provider, you can sign up, create a profile, and
+          list your services with details.
+        </p>
+      ),
     },
     {
-      question: <p className="font-heading">How do I communicate with the service provider?</p>,
-      answer:
-        <p className="text-xl">You can use the platforms messaging system to communicate with service providers regarding bookings and inquiries.</p>,
+      question: (
+        <p className="font-heading">
+          How do I communicate with the service provider?
+        </p>
+      ),
+      answer: (
+        <p className="text-xl">
+          You can use the platforms messaging system to communicate with service
+          providers regarding bookings and inquiries.
+        </p>
+      ),
     },
     {
-      question: <p className="font-heading">How can I become a service provider on this platform?</p>,
-      answer:
-        <p className="text-xl">To book a service, you can browse through the available services, select the one you want, and follow the booking process.</p>,
-    }
+      question: (
+        <p className="font-heading">
+          How can I become a service provider on this platform?
+        </p>
+      ),
+      answer: (
+        <p className="text-xl">
+          To book a service, you can browse through the available services,
+          select the one you want, and follow the booking process.
+        </p>
+      ),
+    },
   ];
 
   return (
@@ -382,7 +412,8 @@ const Home = () => {
           We Are Also Available in Mobile Section
         </h5>
         <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
-          Download our app form Google Play & Mac App store, and enjoy the popular place with us.
+          Download our app form Google Play & Mac App store, and enjoy the
+          popular place with us.
         </p>
         <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
           <a

@@ -83,7 +83,6 @@ const Login = () => {
         };
         displayErrorToast();
 
-        
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 1000);
@@ -106,7 +105,10 @@ const Login = () => {
           <div className="relative flex flex-col shadow-none">
             <h4 className="block text-center text-[22px]">Log in to Tripify</h4>
             <div className="mx-auto mt-5">
-              <ReCAPTCHA sitekey="6LelPTApAAAAADWVe8dSbkcjltECOr38kOEygA9u" onChange={onChange} />
+              <ReCAPTCHA
+                sitekey="6LelPTApAAAAADWVe8dSbkcjltECOr38kOEygA9u"
+                onChange={onChange}
+              />
             </div>
             <div>
               {loggedError && (
