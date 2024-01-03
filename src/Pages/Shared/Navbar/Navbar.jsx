@@ -51,9 +51,9 @@ const Navbar = () => {
             <li>
               <NavLink to="dashboard/ManageServices">Manage Services</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/dashboard/MySchedules">My Schedules</NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       ) : null}
@@ -182,9 +182,9 @@ const Navbar = () => {
                       Manage Services
                     </NavLink>
                   </li>
-                  <li>
+                  {/* <li>
                     <NavLink to="/dashboard/MySchedules">My Schedules</NavLink>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               {user ? (
