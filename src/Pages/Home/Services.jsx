@@ -1,68 +1,3 @@
-// import { useState, useEffect } from "react";
-// import ServiceDetails from "./ServiceDetails";
-// import { Link } from "react-router-dom";
-// import { Helmet } from "react-helmet-async";
-
-// const Services = ({ isHome }) => {
-//   const [services, setServices] = useState([]);
-//   // const [searchText, setSearchText] = useState("");
-
-//   useEffect(() => {
-//     fetch("https://tripify-server-cyan.vercel.app/dashboard/AddService")
-//       .then((response) => response.json())
-//       .then((data) => setServices(data));
-//   }, []);
-
-//   // const filteredServices = services.filter((service) =>
-//   //   service.name.toLowerCase().includes(searchText.toLowerCase())
-//   // );
-
-//   return (
-//     <div>
-//       <Helmet>
-//         <title>Home | Service</title>
-//       </Helmet>
-//       <div className="">
-//         <h1 className="text-center mt-20 font-bold text-4xl font-heading">
-//           Popular Destination
-//         </h1>
-//         <h1 className="text-center mt-1 font-normal">
-//           Checkout Our Popular Packages & Destinations
-//         </h1>
-//       </div>
-
-//       {/* Search input field */}
-//       <div className="rounded-xl mt-20">
-//         {
-//          services.map((service) => (
-//           <ServiceDetails key={service._id} service={service}></ServiceDetails>
-//         ))}
-//       </div>
-
-//       {isHome ? (
-//         <Link to="/services">
-//           <button
-//             className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
-//           >
-//             See More
-//           </button>
-//         </Link>
-//       ) : (
-
-//         // Conditional rendering of "Load More" button based on visibleServices and total services
-//         services < services.length && (
-//           <button
-//             className="py-3 bg-blue-500 rounded px-4 text-white text-center justify-center flex mx-auto mt-12"
-//           >
-//             Load More
-//           </button>
-//         )
-//       )}
-
-//     </div>
-//   );
-// };
-
 import { useEffect, useState } from "react";
 import ServiceDetails from "./ServiceDetails";
 import { Helmet } from "react-helmet-async";
@@ -97,7 +32,7 @@ const Services = ({ isHome }) => {
   return (
     <div className="mb-10">
       <Helmet>
-        <title>Tripify | Service Details</title>
+        <title>Tripify | Services</title>
       </Helmet>
       <div className="relative">
         <div className="text-center mt-24 bg-white bg-opacity-90">

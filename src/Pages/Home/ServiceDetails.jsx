@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import moment from "moment";
 import { HiLocationMarker } from 'react-icons/hi';
+import { Helmet } from "react-helmet-async";
 
 
 const ServiceDetails = ({ service }) => {
@@ -43,7 +44,7 @@ const ServiceDetails = ({ service }) => {
                <h1>
                 <HiLocationMarker className=" text-blue-600 mt-1 "></HiLocationMarker>
                 </h1>
-                <h1 className="mb-2 text-blue-600 ml-1">{service.ServiceArea}</h1>
+                <h1 className="mb-2 text-blue-600 ml-1">{ServiceArea} </h1>
                </div>
             <a
               href="#"

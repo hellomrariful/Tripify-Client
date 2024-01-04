@@ -95,7 +95,7 @@ const SingleServiceDetails = () => {
     <div>
       <div>
         <Helmet>
-          <title>Tripify | Service Details</title>
+          <title>{service.serviceName}</title>
         </Helmet>
         <div className="flex mx-auto flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100">
           <img
