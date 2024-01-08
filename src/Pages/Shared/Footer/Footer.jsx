@@ -48,9 +48,6 @@ const Footer = () => {
               <div className="flex flex-col items-center sm:flex-row sm:justify-between">
                 <p className=" text-[#858585] dark:text-gray-300 ">
                   <Link to={"/"}> © Tripify 2023.</Link> All Rights Reserved.
-                  <span className="ml-32">
-                    67/2, Agrani, Sylhet, Bangladesh.
-                  </span>
                 </p>
 
                 <div className="flex  -mx-2 md:mt-0 mt-3">

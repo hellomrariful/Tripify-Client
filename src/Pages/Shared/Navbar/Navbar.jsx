@@ -13,7 +13,7 @@ const Navbar = () => {
   const handelSignOut = async () => {
     try {
       await logOut();
-      navigate("/login"); // Use navigate instead of returning Navigate component
+      navigate("/login");
     } catch (error) {
       console.error("Error signing out:", error);
     }
