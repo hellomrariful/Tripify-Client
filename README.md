@@ -1,43 +1,51 @@
-# Tripify BD
+# Tripify | A online career maker website.
 
-## [ Tripify Live Link](https://tripifybd.web.app/)
+## Description
 
+Tripify is a Online career maker website. In this projects, user can earn money by guiding tourists in his area. This website has 3 role of user, 1.Admin, 2.Tourist, 3.Tour Guide. Tripify is built in MERN[MongoDB, Express.js, React.js, Node.js] Stake based.
 
-Live URL: [https://tripifybd.web.app/](https://tripifybd.web.app/)
+## Live Link
 
-<details>
+[Tripify Live](https://tripifybd.web.app/)
 
-<summary style="font-weight: bold; text:2xl" >Description of Tripify BD</summary>
-Tripify is a Online career maker website. In this projects, user can earn money by guiding tourists in his area. This website has 3 role of user, 1.Admin, 2.Tourist, 3.Tour Guide. Tripify is built in MERN[MongoDB, Express.js, React.js, Node.js] Stake.
+## Server Side
 
+[Tripify Server Code](https://github.com/hellomrariful/Tripify-Server)
 
-</details>
+## Tripify Homepage
 
-<details>
-<summary style="font-weight: bold; text:2xl" >Main features and functionalities of Tripify</summary>
+![Home Page of Tripify](/public/tripify.png)
 
-- This project is developed for making trip and travel.
+## Key Features
 
-- In this project, You can Book Latest and Greatest Place for Trip & Travel.
+- **Functionality**
 
-- Also This Project allows users to create accounts for Booking Service.
+  - This project is developed for making trip and travel.
+  - User can Book Latest and Greatest Place for Trip & Travel.
+  - Also This Project allows users to create accounts for Booking Service.
+  - When users logged in then user can access detailed information about each Service, and also user can see his/her added Service in My Cart section.
+  - Also user can filter the service name. If wanna explore this site, you need must logged In. If user logged, then He/She see all feature easily.
 
-- When users logged in then user can access detailed information about each Service, and also user can see his/her added Service in My Cart section.
+- **Authentication:**
 
-- Also user can filter the service name. If wanna explore this site, you need must logged In. If user logged, then He/She see all feature easily.
+  - Gmail and Email/Password authentication system.
+  - Implement JWT(Json Web Token) with private route.
+  - As a full stack web also protected admin route.
 
-</details>
+- **Responsive Design:**
+  - Enjoy a seamless experience across various devices.
 
-
-
-<details>
-
-<summary style="font-weight: bold; text:2xl" >Core Technologies Used In Tripify</summary>
+## Technologies Used
 
 - **Frontend:** JavaScript, React.js, Tailwind CSS and Material Tailwind.
 - **Backend:** Node.js, Express.js.
 - **Database:** MongoDB.
-- **Authentication:** Firebase Authentication.
+- **Authentication:** Firebase Authentication with JWT.
 - **Host:** Firebase.
 
-</details>
+## How to Run Locally
+
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Configure environment variables for MongoDB, Firebase, and Stripe.
+4. Run the development server using `npm run dev`.
